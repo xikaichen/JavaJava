@@ -1,5 +1,5 @@
 public class NBody{
-	public static String imageToDraw = "starfield.jpg";
+	public static String imageToDraw = "./images/starfield.jpg";
 
 	public static double readRadius(String filename){
 		In in = new In(filename);
@@ -28,7 +28,7 @@ public class NBody{
 			temp[2] = in.readDouble();
 			temp[3] = in.readDouble();
 			temp[4] = in.readDouble();
-			String name = in.readString();
+			String name = "./images/" + in.readString();
 			System.out.println(name);
 			Planet planet = new Planet(temp[0], temp[1], temp[2], temp[3], temp[4], name);
 
