@@ -1,5 +1,5 @@
 class LinkedListDeque <Item> { 
-	//nest class
+	//nest class.
 	class Node {
 	Item value;
 	Node next;
