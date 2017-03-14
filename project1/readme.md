@@ -1,2 +1,9 @@
-I think this is not a good LinkedListDeque implementation. The argument in addFirst, addLast is Node type. I don't like it. 
-And I have not implement removeFirst, removeLast. Let's call it version1.....
+Implement a Java LinkedListDeque
+Methods include:
+addFirst
+addLast
+removeFirst
+removeLast
+get
+printDeque
+size
