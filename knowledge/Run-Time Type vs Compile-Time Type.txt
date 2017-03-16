@@ -1,0 +1,11 @@
+The compile-time type governs which methods can be called, while the runtime type governs what happens during the actual call.
+
+Object o = new String("ABC");
+
+o’s compile-time type is Object, while it’s run-time type is String;
+
+You can use o.hashCode(), because Object type has a method named hashCode();
+
+You cannot use o.indexOf(), because although String type has such a method, Object type doesn’t;
+
+When you can o.hashCode(), hashCode() method is in String class. So it is actually String.hasCode() not Object.hasCode(). This called polymorphism. 
