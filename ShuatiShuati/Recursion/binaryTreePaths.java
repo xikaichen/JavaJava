@@ -1,8 +1,4 @@
 public class binaryTreePaths {
-    /**
-     * @param root the root of the binary tree
-     * @return all root-to-leaf paths
-     */
     public List<String> binaryTreePaths(TreeNode root) {
         List<String> result = new ArrayList<String>();
         List<Integer> temp = new ArrayList<Integer>();
