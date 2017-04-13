@@ -1,0 +1,6 @@
+1. Queue中的元素
+2. 图搜索(HashSet)or树搜索
+3. 需不需要表达层级遍历的概念(用size)，例如统计多少层/天/次。。。否次一层一层的出队和一个一个出队没有区别
+4. 邻居(坐标变化(棋盘，网格)or其他方法(word ladder,course schedule))
+5. inBound
+6. 入Queue条件
