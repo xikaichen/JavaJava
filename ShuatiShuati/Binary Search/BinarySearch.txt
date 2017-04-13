@@ -1,0 +1,5 @@
+1. while (start + 1 < end);
+2. mid = start + (end - start) / 2;
+3. mid = end or start;
+4. 最后比较start 和 end
+
