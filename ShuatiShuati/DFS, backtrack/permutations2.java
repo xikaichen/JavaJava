@@ -3,7 +3,7 @@ class permutation2 {
         List<List<Integer>> res = new ArrayList<List<Integer>>();
         List<Integer> temp = new ArrayList<Integer>();
         boolean[] used = new boolean[nums.length];
-        Arrays.sort(nums); //why sort, not fully understand
+        Arrays.sort(nums); 
         backtrack(nums, res, temp, used);
         return res;
     } 
