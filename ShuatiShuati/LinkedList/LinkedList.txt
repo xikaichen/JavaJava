@@ -1,0 +1,29 @@
+1. node之间的等号只是下标的传递 真正改变值的是.next和.val
+2. 找中点 slow = head, fast = head.next while(fast != null && fast.next != null) return slow.优点 ：奇数个点找到中点，偶数个点找到前面那个点， 这样想要后面那个点也很方便。无法处理head是null的情况
+3. dummy的作用记录链表开头位置， 可以看作一个下标，仅此而已
+
+4. ListNode node;记录的只是引用，打印出来时地址，所以赋值只是把地址赋过来
+当两个node的地址一样时，每一个node都可以通过val和next改变存在该地址的值
+node = node1;
+node1.val = 100;
+=>
+node.val = 100;
+
+node = node1;
+node1 = node2;
+node.val = 还是node1原来的值
+
+5. 最好的翻装linkedlist方法,翻装链表一定要用前后两个点包起来，所以前面需要一个dummy，后面需要一个结尾的点或者null
+
+
+ListNode prev = dummy;
+ListNode cur = head;
+while (cur.next != 要翻装的最后一个点后面的那一个) {
+    ListNode temp = cur.next;
+    cur.next = temp.next;
+    temp.next = prev.next;
+    pre.next = temp;
+}
+return dummy.next;
+
+
