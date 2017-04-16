@@ -25,15 +25,19 @@ class sortColors2 {
                 r--;
             }
             if (l < r) {
-                int temp = colors[l];
-                colors[l] = colors[r];
-                colors[r] = temp;
+                swap(colors, l, r);
                 l++;
                 r--;
             }
         }
         
-        rainbowSort(colors, left, r, colorFrom, colorMid);
+        rainbowSort(colors, left, r, colorFrom, colorMid); //出while后l 永远在r后面一个
         rainbowSort(colors, l, right, colorMid + 1, colorTo);
+    }
+    
+    private void swap(int[] colors, int i, int j) {
+        int temp = colors[i];
+        colors[i] = colors[j];
+        colors[j] = temp;
     }
 }
