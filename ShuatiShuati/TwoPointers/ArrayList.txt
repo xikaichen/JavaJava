@@ -1,0 +1,10 @@
+1. sort后不能返回正确的index了 只能返回原数字。要返回index除非本来已经sort好了 否则用hashmap
+2. 用two pointers 一定要先排序，有duplicates 要去重。
+3. kSum
+for(int i = 0; i < nums.length - k; i++){
+    i去重
+    (k - 1)sum；    
+}
+4. partition 
+条件用left <= right while移动left和right也用这个，交换也用这个
+最后出while永远都是l移动r的后面一个去
