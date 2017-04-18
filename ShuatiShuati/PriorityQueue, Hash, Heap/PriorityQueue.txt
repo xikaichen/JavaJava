@@ -1,0 +1,9 @@
+1. PriorityQueue
+java默认 正向(a > b return 1;) 每次poll出来都是最小的，heap 是minheap 
+逆向(a > b return -1;) 每次poll出来都是最大的，heap是maxheap
+正向不需要重写comparator， 不过如果对象不是java的对象还是要写的。
+不需要指定 PQ大小，加入PQ的时候全部加进去， 最后要几个poll几个就好了。
+PriorityQueue<Point> pq = new PriorityQueue<Point> (k, new Comparator<Point>(){
+    @Override
+    public int compare(Point a, Point b){…}
+});
