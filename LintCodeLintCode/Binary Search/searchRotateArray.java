@@ -24,7 +24,7 @@ public class searchRotateArray {
                 }
             }
             if(A[mid] < A[start]) {
-                if(target > A[mid] && target < A[start]) {
+                if(target > A[mid] && target <= A[end]) {
                     start = mid;
                 }
                 else {
