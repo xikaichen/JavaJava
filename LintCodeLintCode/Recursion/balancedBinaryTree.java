@@ -5,7 +5,7 @@ public class balancedBinaryTree {
      */
     private class ReturnType {
         boolean isBalanced;
-        int height;
+        int height; 
         public ReturnType(boolean isBalanced, int height) {
             this.isBalanced = isBalanced;
             this.height = height;
