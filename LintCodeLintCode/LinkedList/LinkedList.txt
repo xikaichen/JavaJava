@@ -1,5 +1,5 @@
 1. node之间的等号只是下标的传递 真正改变值的是.next和.val
-2. 找中点 slow = head, fast = head.next while(fast != null && fast.next != null) return slow.优点 ：奇数个点找到中点，偶数个点找到前面那个点， 这样想要后面那个点也很方便。无法处理head是null的情况
+2. 找中点 slow = head, fast = head while(fast.next != null && fast.next.next != null) return slow.优点 ：奇数个点找到中点，偶数个点找到前面那个点， 这样想要后面那个点也很方便。无法处理head是null的情况
 3. dummy的作用记录链表开头位置， 可以看作一个下标，仅此而已
 
 4. ListNode node;记录的只是引用，打印出来时地址，所以赋值只是把地址赋过来
