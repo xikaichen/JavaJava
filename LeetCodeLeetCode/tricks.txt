@@ -1,0 +1,3 @@
+1. list get不能用来赋值，
+list.get(1) = 100 错，要用list.set(1,100)
+
