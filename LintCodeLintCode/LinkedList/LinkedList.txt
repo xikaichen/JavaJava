@@ -22,7 +22,7 @@ while (cur.next != 要翻装的最后一个点后面的那一个) {
     ListNode temp = cur.next;
     cur.next = temp.next;
     temp.next = prev.next;
-    pre.next = temp;
+    prev.next = temp;
 }
 return dummy.next;
 
