@@ -1,0 +1,5 @@
+三种traverse都是用stack
+终止条件都是while (!stack.isEmpty() || cur != null) {…}
+inorder node在上方就加
+preorder node在右边就加
+postorder node在左边就加
