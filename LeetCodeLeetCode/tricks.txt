@@ -1,3 +1,7 @@
 1. list get不能用来赋值，
 list.get(1) = 100 错，要用list.set(1,100)
 
+2. LinkedList<Integer> list = new LinkedList<Integer>();
+这样生成的list可以使用addFirst函数，每一次把数字加在最前面
+
+3. getOrDefault(a, b)用来代替if key exist do.. else do …
