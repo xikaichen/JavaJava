@@ -20,3 +20,7 @@ public class Solution {
         return low;
     }
 }
+
+//二分搜索 搜索的是区间
+// low = mid + 1 和 high = mid 正好分成了两个区间， 如果count < k就在low区间找，如果count >= k就在high区别找
+//为什么always return low？ 为什么是 low < high 而不是 <=? 
