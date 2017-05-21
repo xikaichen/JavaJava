@@ -5,3 +5,9 @@ list.get(1) = 100 错，要用list.set(1,100)
 这样生成的list可以使用addFirst函数，每一次把数字加在最前面
 
 3. getOrDefault(a, b)用来代替if key exist do.. else do …
+
+4. String.valueOf(char[]) change char[] to string
+5. Integer.parseInt(String) change string to int
+6. Integer.toString(int) int to string
+7. s.toString() change string builder object to string
+8. string.split(“some regrex…”) split string example: “10.01”.split(“\\.”)
