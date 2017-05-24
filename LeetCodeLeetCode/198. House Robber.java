@@ -11,3 +11,7 @@ public class Solution {
 
 
 
+// 遍历所有房子
+// 抢i = 不抢 i - 1 + nums[i]
+// 不抢i = max(不抢i - 1, 抢i - 1)
+
