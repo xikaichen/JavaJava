@@ -29,8 +29,10 @@ class sortColors2 {
                 l++;
                 r--;
             }
-        }
+        } 
         
+        // 两种情况一种 1. left - r 是 colorFrom 到 color Mid。 l - right是colorMid + 1到 colorTo
+        //2. l 和 r刚好在一个地方，这个时候还是可以按照情况1的方法排
         rainbowSort(colors, left, r, colorFrom, colorMid); //出while后l 永远在r后面一个
         rainbowSort(colors, l, right, colorMid + 1, colorTo);
     }
