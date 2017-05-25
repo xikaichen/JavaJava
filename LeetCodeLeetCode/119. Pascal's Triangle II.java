@@ -7,7 +7,7 @@ public class Solution {
         list.add(1);
         for (int i = rowIndex - 1; i >= 0; i--) { // update from tail to head
             for (int j = i; j < rowIndex; j++) { // add from current to tail
-                list.set(j, list.get(j + 1) + list.get(j));
+                list.set(j, list.get(j) + list.get(j + 1));
             }
         }
         return list;
