@@ -19,4 +19,13 @@ not运算的定义是把内存中的0和1全部取反。使用not运算时要格
 6. >>右移运算
 和 << 相似，a >> b表示二进制右移b位（去掉末b位），相当于a除以2的b次方（取整）。我们也经常用 >> 1来代替div 2，比如二分查找、堆的插入操作等等。想办法用>>代替除法运算可以使程序效率大大提高。最大公约数的二进制算法用除以2操作来代替慢得出奇的mod运算，效率可以提高60%。
 
-
+7. 常用操作
+Set union A | B
+Set intersection A & B
+Set subtraction A & ~B
+Set bit A |= 1 << bit
+Clear bit A &= ~(1 << bit)
+Test bit (A & 1 << bit) != 0
+Extract last bit A&-A or A&~(A-1) or x^(x&(x-1))
+Remove last bit A&(A-1)
+Get all 1-bits ~0
