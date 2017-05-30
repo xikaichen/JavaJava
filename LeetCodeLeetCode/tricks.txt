@@ -11,3 +11,4 @@ list.get(1) = 100 错，要用list.set(1,100)
 6. Integer.toString(int) int to string
 7. s.toString() change string builder object to string
 8. string.split(“some regrex…”) split string example: “10.01”.split(“\\.”)
+9. Arrays.fill(int[] a, int val), fill an array with val.
