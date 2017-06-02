@@ -9,7 +9,7 @@
  */
 public class Solution {
     public List<TreeNode> generateTrees(int n) {
-        return genTreeList(1,n);
+        return genTreeList(1, n);
     }
     
     private List<TreeNode> genTreeList (int start, int end) {
@@ -21,7 +21,7 @@ public class Solution {
             List<TreeNode> leftList = genTreeList(start, idx - 1);
             List<TreeNode> rightList = genTreeList(idx + 1, end);
             for (TreeNode left : leftList) {
-                for(TreeNode right: rightList) {
+                for(TreeNode right : rightList) {
                     TreeNode root = new TreeNode(idx); // 为什么在重复的生成root？
                     root.left = left;
                     root.right = right;
