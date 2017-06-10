@@ -34,6 +34,81 @@ public class NumArray {
     }
 }
 
+//线段树
+public class NumArray {
+    public class SegmentTree {
+        int start;
+        int end;
+        SegmentTree left;
+        SegmentTree right;
+        int sum;
+        public SegmentTree(int start, int end) {
+            this.start = start;
+            this.end = end;
+            left = null;
+            right = null;
+            sum = 0;
+        }
+    }
+    
+    private SegmentTree root;
+    public NumArray(int[] nums) {
+        root = BuildTree(nums, 0, nums.length - 1);
+    }
+    
+    private SegmentTree BuildTree(int[] nums, int start, int end) {
+        if (start > end) {
+            return null;
+        }
+        SegmentTree node = new SegmentTree(start, end);
+        if (start == end) {
+            node.sum = nums[start];
+        } else {
+            int mid = start + (end - start) / 2;
+            node.left = BuildTree(nums, start, mid);
+            node.right = BuildTree(nums, mid + 1, end);
+            node.sum = node.left.sum + node.right.sum;
+        }
+        return node;
+    }
+    
+    public void update(int i, int val) {
+        update(root, i, val);
+    }
+    
+    public void update(SegmentTree root, int i, int val) {
+        if (root.end == root.start) {
+            root.sum = val;
+        } else {
+            int mid = root.start + (root.end - root.start) / 2;
+            if (i <= mid) {
+                update(root.left, i, val);
+            } else {
+                update(root.right, i, val);
+            }
+            root.sum = root.left.sum + root.right.sum;
+        }
+    }
+    
+    public int sumRange(int i, int j) {
+        return sumRange(root, i, j);
+    }
+    
+    public int sumRange(SegmentTree root, int i, int j) {
+        if (root.start == i && root.end == j) {
+            return root.sum;
+        }
+        int mid = root.start + (root.end - root.start) / 2;
+        if (j <= mid) {
+            return sumRange(root.left, i, j);
+        } else if (i >= mid + 1) {
+            return sumRange(root.right, i, j);
+        } else {
+            return sumRange(root.left, i, mid) + sumRange(root.right, mid + 1, j);
+        }
+    }
+}
+
 
 
 /**
