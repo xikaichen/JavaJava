@@ -1,8 +1,8 @@
-// Mainly use two facts"
+// Mainly use three facts"
 // 1. Because if we let a = (1337x + c) where c = a mod 1337,
 // (1337x + c)(1337x + c)(1337x + c)...(1337x + c) mod 1337 == ccc...c mod 1337.
 // 2. a ^ n % b, this is always a pattern. for example 6 ^ n % 7, the pattern is [1, 6, 1, 6, 1, 6, ......]
-
+// 3. a % b = rem, a * a % b = rem * a % b = newrem(new), a * a * a = newrem * a % b....
 
 public class Solution {
     private int DIV = 1337;

@@ -1,0 +1,35 @@
+public class Solution {
+    public int findSubstringInWraproundString(String p) {
+        // count[i] is the maximum unique substring end with ith letter.
+        // 0 - 'a', 1 - 'b', ..., 25 - 'z'.
+        int[] count = new int[26];
+        
+        // store longest contiguous substring ends at current position.
+        int maxLengthCur = 0; 
+
+        for (int i = 0; i < p.length(); i++) {
+            if (i > 0 && (p.charAt(i) - p.charAt(i - 1) == 1 || (p.charAt(i - 1) - p.charAt(i) == 25))) {
+                maxLengthCur++;
+            }
+            else {
+                maxLengthCur = 1;
+            }
+            
+            int index = p.charAt(i) - 'a';
+            count[index] = Math.max(count[index], maxLengthCur);
+        }
+        
+        // Sum to get result
+        int sum = 0;
+        for (int i = 0; i < 26; i++) {
+            sum += count[i];
+        }
+        return sum;
+    }
+}
+
+
+// i.e:  z a b c x y z a
+//       1 2 3 4 1 2 3 4
+// count:a-4, b-3, c-4, x-1, y-2, z-3
+// sum = 17
