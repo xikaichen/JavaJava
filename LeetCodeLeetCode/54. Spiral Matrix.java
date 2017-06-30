@@ -36,3 +36,5 @@ public class Solution {
         return res;
     }
 }
+
+// similar 59
