@@ -30,8 +30,7 @@ public class Solution {
             for (int j = 0; j < size; j++) {
                 Coordinates cur = queue.poll();
                 for (int i = 0; i < 4; i++) {
-                    int newX = cur.x + X_Coordinates[i];
-                    int newY = cur.y + Y_Coordinates[i];
+                    int newX = cur.x + X_Coordinates[i], newY = cur.y + Y_Coordinates[i];
                     if (isBound(matrix, newX, newY) && matrix[newX][newY] < matrix[cur.x][cur.y]) {
                         queue.offer(new Coordinates(newX, newY));
                     }
