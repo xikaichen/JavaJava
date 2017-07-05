@@ -95,7 +95,7 @@ public class NumArray {
     }
     
     public int sumRange(SegmentTree root, int i, int j) {
-        if (root.start == i && root.end == j) {
+        if (root.start == i && root.end == j) { // key point: 不能用root.start == root.end 因为这样相当于一直找到最底层的单个点在回溯，而正确的写法是去匹配i-j区间
             return root.sum;
         }
         int mid = root.start + (root.end - root.start) / 2;
