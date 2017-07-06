@@ -1,3 +1,4 @@
+// 区间里的二分搜索
 public class Solution {
     public int[] searchRange(int[] nums, int target) {
         int[] res = {-1, -1};

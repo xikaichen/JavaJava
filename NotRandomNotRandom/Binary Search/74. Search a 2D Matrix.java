@@ -19,6 +19,7 @@ public class Solution {
 }
 
 //solution 2: binary search: view matrix as an array
+// 之所以可以用binary search是因为整个矩阵都是按照顺序排列的 而不是列和行分别按顺序排列
 public class Solution {
     public boolean searchMatrix(int[][] matrix, int target) {
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
