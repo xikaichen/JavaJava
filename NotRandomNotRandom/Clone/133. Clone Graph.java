@@ -36,7 +36,7 @@ public class Solution {
 
         //step2: clone relationship
         for (UndirectedGraphNode n : map.keySet()) {
-            ArrayList<UndirectedGraphNode> temp = new ArrayList<UndirectedGraphNode>();
+            List<UndirectedGraphNode> temp = new LinkedList<UndirectedGraphNode>();
             for (UndirectedGraphNode neighbor : n.neighbors) {
                 temp.add(map.get(neighbor));
             }

@@ -42,19 +42,20 @@ public class Solution {
     public List<Integer> lexicalOrder(int n) {
         List<Integer> res = new ArrayList<Integer>();
         for (int i = 1; i < 10; i++) {
-          DFS(i, n, res); 
+            DFS(i, n, res); 
         }
         return res;
     }
     
-    public void DFS(int cur, int n, List<Integer> res){
+    public void DFS(int cur, int n, List<Integer> res) {
         if (cur > n) {
             return;
         } else {
             res.add(cur);
             for(int i = 0; i < 10; i++) {
-                if (10 * cur + i > n)
+                if (10 * cur + i > n) {
                     return;
+                }
                 DFS(10 * cur + i, n, res);
             }
         }
