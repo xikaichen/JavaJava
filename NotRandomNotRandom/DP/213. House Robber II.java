@@ -22,4 +22,3 @@ public class Solution {
 
 // if the house of [1,2,3,4,5,6] is a circle.
 // pick the max number from the solution to the non-circle[1,2,3,4,5] and the solution to the non-circle[2,3,4,5,6]
-// if they are equal, it means don't rob 1 and 6

@@ -14,7 +14,7 @@ public class Solution {
         return res;
     }
     
-    public boolean helper(int desiredTotal){
+    public boolean helper(int desiredTotal) {
         if(desiredTotal <= 0) return false;
         int key = format(used);
         if(!map.containsKey(key)){

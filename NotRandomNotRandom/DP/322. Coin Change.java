@@ -20,3 +20,26 @@ public class Solution {
         }
     }
 }
+
+
+
+public class Solution {
+    public int coinChange(int[] coins, int amount) {
+        int[] dp = new int[amount + 1];
+        Arrays.fill(dp, Integer.MAX_VALUE);
+        dp[0] = 0;
+        // dp的初始值表示没有硬币时，dp[i]最小硬币数，那么只有i = 0时，才有一个解，其他时候都是无解所以设成max_value
+        for (int i = 0; i < coins.length; i++) {
+            for (int j = coins[i]; j <= amount; j++) {
+                if (dp[j - coins[i]] != Integer.MAX_VALUE) {
+                    dp[j] = Math.min(dp[j], dp[j - coins[i]] + 1);
+                }
+        
+        }
+        if (dp[amount] == Integer.MAX_VALUE) {
+            return -1;
+        } else {
+            return dp[amount];
+        }
+    }
+}

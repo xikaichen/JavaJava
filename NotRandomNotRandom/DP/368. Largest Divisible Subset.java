@@ -13,6 +13,7 @@ public class Solution {
         for (int i = 0; i < dp.length; i++) {
             dp[i] = 1;
         }
+        // dp[i]的初始值表示，一开始这个nums[i]有多少个因子，除了自己别的不知道了 所以初始值是1
         for (int i = 0; i < nums.length; i++) {
             for (int j = i - 1; j >= 0; j--) {
                 if (nums[i] % nums[j] == 0) {
