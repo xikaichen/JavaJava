@@ -1,3 +1,7 @@
+// 为什么要把dp[1 - n]填成Integer.MAX_VALUE？
+// 因为dp[i]表示的是对于数字i需要的最小的perfect square数，除了dp[0]我知道是0以外，其他的我不知道
+// 但是因为我要找最小值，所以我设成MAX_VALUE
+
 public class Solution {
     public int numSquares(int n) {
     	int[] dp = new int[n + 1];
