@@ -1,3 +1,4 @@
+// 数字有重复，每个数字不可重复用，需要排序（去重复答案）终止条件target == 0，以及出界（节省时间）
 public class Solution {
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
         List<List<Integer>> res = new ArrayList<List<Integer>>();

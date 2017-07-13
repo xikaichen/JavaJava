@@ -1,6 +1,6 @@
+// 不能有重复，不需要排序，用hashmap去掉用过的数字,终止条件取决于temp长度
 public class Solution {
     public List<List<Integer>> permute(int[] nums) {
-        Arrays.sort(nums);
         List<List<Integer>> res = new LinkedList<List<Integer>>();
         List<Integer> temp = new LinkedList<Integer>();
         boolean[] used = new boolean[nums.length];

@@ -42,18 +42,18 @@ public class Solution {
         // factorial[] = {1, 1, 2, 6, 24, ... n!}
         
         // create a list of numbers to get indices
-        for(int i=1; i<=n; i++){
+        for(int i = 1; i <= n; i++) {
             numbers.add(i);
         }
         // numbers = {1, 2, 3, 4}
         
         k--;
         
-        for(int i = 1; i <= n; i++){
-            int index = k/factorial[n-i];
+        for(int i = 1; i <= n; i++) {
+            int index = k / factorial[n - i];
             sb.append(numbers.get(index));
             numbers.remove(index);
-            k-=index*factorial[n-i];
+            k -= index * factorial[n - i];
         }
         
         return String.valueOf(sb);

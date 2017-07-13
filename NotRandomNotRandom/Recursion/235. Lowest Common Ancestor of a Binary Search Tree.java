@@ -34,3 +34,17 @@ public class Solution {
         return left; // else return left or right.
     }
 }
+
+
+// p, q存在，只需要比较值即可
+public class Solution {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        if(root.val > p.val && root.val > q.val){
+            return lowestCommonAncestor(root.left, p, q);
+        }else if(root.val < p.val && root.val < q.val){
+            return lowestCommonAncestor(root.right, p, q);
+        }else{
+            return root;
+        }
+    }
+}

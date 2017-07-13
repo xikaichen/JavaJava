@@ -10,7 +10,7 @@
 public class Solution {
     public int rob(TreeNode root) {
         int[] res =robSub(root);
-        return Math.max(res[0], res[1]);
+        return Math.max(res[0], res[1]); // res[0] root被抢，res[1] root没被抢
     }
     
     private int[] robSub(TreeNode root) {

@@ -1,3 +1,4 @@
+// 数字无重复 但是可以重复用，不需要排序，终止条件target == 0 或出界
 public class Solution {
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> res = new ArrayList<List<Integer>>();
