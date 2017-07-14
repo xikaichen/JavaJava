@@ -22,10 +22,11 @@ public class Solution {
         for (int i = 0; i < nums.length; i++) {
             pq.offer(nums[i]);
         }
+
         StringBuilder sb = new StringBuilder();
         while (!pq.isEmpty()) {
             int cur = pq.poll();
-            if (sb.toString().equals("0") && cur == 0) {
+            if (sb.toString().equals("0") && cur == 0) { // avoid the corner case [0, 0, 0, 0]
                 continue;
             }
             sb.append(cur);

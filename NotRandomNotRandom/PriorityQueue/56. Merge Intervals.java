@@ -16,13 +16,16 @@
 
 public class Solution {
     public List<Interval> merge(List<Interval> intervals) {
-        if (intervals.size() <= 1) {
-            return intervals;
+        List<Interval> res = new LinkedList<Interval>();
+        if ( intervals == null || intervals.size() == 0) {
+            return res;
         }
+        
         intervals.sort((i, j) -> Integer.compare(i.start, j.start));
+        
         int start = intervals.get(0).start;
         int end = intervals.get(0).end;
-        List<Interval> res = new LinkedList<Interval>();
+
         for (Interval interval : intervals) {
             if (interval.start <= end) {
                 end = Math.max(interval.end, end);
@@ -32,6 +35,7 @@ public class Solution {
                 end = interval.end;
             }
         }
+
         res.add(new Interval(start, end));
         return res;
     }

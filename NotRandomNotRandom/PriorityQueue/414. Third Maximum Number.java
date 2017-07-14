@@ -12,20 +12,25 @@ public class Solution {
                 }
             }
         });
+
         for (int i = 0; i < nums.length; i++) {
             pq.offer(nums[i]);
         }
+
         Set<Integer> set = new HashSet<Integer>();
         int max = pq.peek();
         int thirdMax = -1;
+
         while (!pq.isEmpty() && set.size() < 3) {
             int temp = pq.poll();
             thirdMax = temp;
             set.add(temp);
         }
+
         if (set.size() >= 3) {
             return thirdMax;
         }
+        
         return max;
     }
 }

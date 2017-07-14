@@ -16,7 +16,8 @@ public class Solution {
                 }
             }
         });
-        for (int i = 0; i < nums1.length; i++) {
+
+        for (int i = 0; i < nums1.length && i < k; i++) {
             pq.offer(new int[] {nums1[i], nums2[0], 0});
         }
         
@@ -33,3 +34,7 @@ public class Solution {
         return res;
     }
 }
+// nums1 = [1, 7, 11, 16], nums2 = [2, 9, 10, 15].
+// 先把[1, 2], [7, 2], [11, 2], [16, 2]加入，每一个给一个启示点0，然后按照起始点开始添加nums2里的数
+// 每次从pq里弹出来的数，往pq里添加在nums2里位于起始点的后一个的一个数字，pq对他进行排序
+// 一开始最多加k个数字，然后之后要排k次序，所以时间是O(KlogK)
