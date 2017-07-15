@@ -6,9 +6,10 @@ public class Solution {
             return new int[0];
         }
         Deque<Integer> deque = new LinkedList<Integer>();
+        // deque存下标
         for (int i = 0; i < nums.length; i++) {
             // remove element(index) out of range [i - (k - 1), i];
-            while (!deque.isEmpty() && deque.peek() < i - k + 1) {
+            while (!deque.isEmpty() && i - deque.peek() + 1 > k) { // deque里的第一个，和目前的i不能相差k(保持window大小)
                 deque.poll();
             }
             // remove the element(index) that smaller than cur nums[i];
