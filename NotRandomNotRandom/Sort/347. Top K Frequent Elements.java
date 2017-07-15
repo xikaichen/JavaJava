@@ -7,7 +7,8 @@ public class Solution {
         }
         
         //bucket sort
-        List<Integer>[] bucket = new List[nums.length + 1];
+        // 如果知道array的范围是0 - 已知最大值，就可以用bucket排序 O(n)的时间复杂度
+        List<Integer>[] bucket = new List[nums.length + 1]; // 记住bucket的写法
         for (Integer key : map.keySet()) {
             int freq = map.get(key);
             if (bucket[freq] == null) {

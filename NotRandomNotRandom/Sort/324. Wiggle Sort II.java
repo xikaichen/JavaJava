@@ -4,33 +4,35 @@ public class Solution {
         int odd = 1;
         int even = nums.length % 2 == 0 ? nums.length - 2 : nums.length - 1;
         int[] tmpArr = new int[nums.length];
-        for(int i = 0; i < nums.length; i++){
-            if(nums[i] > median){
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] > median) {
                 tmpArr[odd] = nums[i];
                 odd += 2;
                 continue;
             }
-            if(nums[i] < median){
+            if (nums[i] < median){
                 tmpArr[even] = nums[i];
                 even -= 2;
                 continue;
             }
         }
-        while(odd < nums.length){
+        while (odd < nums.length) {
             tmpArr[odd] = median;
             odd += 2;
         }
-        while(even >= 0){
+        while (even >= 0) {
             tmpArr[even] = median;
             even -= 2;
         }
-        for(int i = 0; i < nums.length; i++){
+        for (int i = 0; i < nums.length; i++) {
             nums[i] = tmpArr[i];
         }
     }
+
     public int findKthLargest(int[] nums, int k) {
         return quickSelect(nums, 0, nums.length - 1, k);
     }
+
     private int quickSelect(int[] nums, int start, int end, int k) {
         if (start == end) {
             return nums[start];

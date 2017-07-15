@@ -1,6 +1,6 @@
 //1. Quick Sort
 
-public void quickSort(int[] nums, int start, int end, int k) {
+public void quickSort(int[] nums, int start, int end) {
 	if (start >= end) {
 		return;
 	}
@@ -24,8 +24,8 @@ public void quickSort(int[] nums, int start, int end, int k) {
 		}
 	}
 
-	quickSort(nums, start, right, k); //key point: always from start to right, and left to end; 
-	quickSort(nums, left, end, k);
+	quickSort(nums, start, right); //key point: always from start to right, and left to end; 
+	quickSort(nums, left, end);
 
 	//key point: for quick select, only need use quick sort for half array.
 }

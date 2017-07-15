@@ -27,3 +27,6 @@ public class Solution {
         nums[j] = temp;
     }
 }
+// left + 1 < right，left和right相邻的情况已经不考察了，binary searh的写法，所以需要在判断left和right的情况
+// left < right, left和right相邻的情况还考察，但是left = right的情况不考察了
+// left <= right, 还考察了left = right的情况，quickselect的写法
