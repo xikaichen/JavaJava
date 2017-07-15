@@ -6,7 +6,7 @@ public class Solution {
         Stack<Integer> stack = new Stack<Integer>();
         int num = 0;
         char sign = '+';
-        for (int i = 0; i < len; i++) {
+        for (int i = 0; i < s.length(); i++) {
             if (Character.isDigit(s.charAt(i))) {
                 num = num * 10 + s.charAt(i) - '0';
             }

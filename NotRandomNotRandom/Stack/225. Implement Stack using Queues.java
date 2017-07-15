@@ -13,7 +13,7 @@ public class MyStack {
         if (queue1.size() == 0) {
             queue1.offer(x);
         } else {
-            while (!queue1.isEmpty()) {
+            while (!queue1.isEmpty()) { // 把queue1弹空，再加新的数，始终保持queue1只有一个数
                 queue2.offer(queue1.poll());
             }
             queue1.offer(x);
@@ -26,12 +26,13 @@ public class MyStack {
             return -1;
         }
         int top = queue1.poll();
-        while (!queue2.isEmpty()) {
+        while (queue2.size() > 1) {
             queue1.offer(queue2.poll());
         }
-        while (queue1.size() > 1) {
-            queue2.offer(queue1.poll());
-        }
+        Queue<Integer> temp = new LinkedList<Integer>();
+        temp = queue1;
+        queue1 = queue2;
+        queue2 = temp;
         return top;
     }
     
