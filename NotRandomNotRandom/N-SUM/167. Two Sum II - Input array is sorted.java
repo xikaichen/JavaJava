@@ -1,3 +1,4 @@
+// 已经排好序了，所以可以用two pointer
 public class Solution {
     public int[] twoSum(int[] numbers, int target) {
         int i = 0;

@@ -19,9 +19,7 @@ public class Solution {
                     min = diff;
                     closeSum = sum;
                 }
-                if (sum == target) {
-                    return closeSum;
-                } else if (sum > target) {
+                if (sum > target) {
                     right--;
                 } else {
                     left++;
