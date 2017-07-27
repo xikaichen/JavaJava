@@ -8,10 +8,10 @@ public class Solution {
     private int DIV = 1337;
     
     List<Integer> findLoop(int a){
-        List<Integer> index = new ArrayList<Integer>();
-        boolean[] set = new boolean[DIV];
+        List<Integer> index = new ArrayList<Integer>(); // a * b * c % DIV = (((a % DIV) * b) % DIV) % DIV, 对于很多数字相乘求模 可以用第一个数取模，用模去乘以接下来的数字
+        boolean[] set = new boolean[DIV]; // the pattern size would be over DIV
         int rem = a % DIV;
-        while (!set[rem] ) {
+        while (!set[rem]) {
             set[rem] = true;
             index.add(rem);
             rem = (rem * a) % DIV;
@@ -19,14 +19,16 @@ public class Solution {
         return index;
     }
     
-    int modBy(int[] b, int m){
+    int modBy(int[] b, int m) { // 找大数字的模 可以这么做
         int rem = 0;
-        for (int i = 0; i < b.length; i++) { // how to compute large number's mod. 
+        for (int i = 0; i < b.length; i++) {
             rem = (rem * 10 + b[i]) % m; // example: 99 % 7.  1: 9 % 7 = 2, 2: (2 * 10 + 9) % 7 = 1
         }
         return rem;
     }
-
+    // a ^ b，先把a变成一个小于DIV的数，用fact 1
+    // 再用fact 2 找到pattern
+    // 再用b去模pattern的size找到结果在pattern中的位置
     public int superPow(int a, int[] b) {
         if (a == 0 || a == DIV || b == null || b.length == 0) {
             return 0;
