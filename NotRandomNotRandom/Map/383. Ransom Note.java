@@ -1,4 +1,4 @@
-//order doesn't matter, "aba" can construct "aa"
+// 从杂志上剪字下来拼成赎金条
 public class Solution {
     public boolean canConstruct(String ransomNote, String magazine) {
         int[] map = new int[26];

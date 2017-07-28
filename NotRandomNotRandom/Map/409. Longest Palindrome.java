@@ -5,13 +5,9 @@ public class Solution {
         }
         //calculate frequency of each character
         char[] chars = s.toCharArray();
-        HashMap<Character, Integer> map = new HashMap<>();
+        Map<Character, Integer> map = new HashMap<>();
         for (int i = 0; i < chars.length; i++) {
-            if (map.containsKey(chars[i])) {
-                map.put(chars[i], map.get(chars[i]) + 1);
-            } else {
-                map.put(chars[i], 1);
-            }
+            map.put(chars[i], map.getOrDefault(chars[i], 0) + 1);
         }
         
         //odd frequency or even frequency

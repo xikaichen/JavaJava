@@ -2,7 +2,7 @@ public class Solution {
     public char findTheDifference(String s, String t) {
         char[] charsS = s.toCharArray();
         char[] charsT = t.toCharArray();
-        HashMap<Character, Integer> map = new HashMap<Character, Integer>();
+        Map<Character, Integer> map = new HashMap<Character, Integer>();
         for (int i = 0; i < charsS.length; i++) {
             if (map.containsKey(charsS[i])) {
                 map.put(charsS[i], map.get(charsS[i]) + 1);

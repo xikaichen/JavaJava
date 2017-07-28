@@ -3,7 +3,7 @@
 public class Solution {
     public int findPairs(int[] nums, int k) {
         Arrays.sort(nums);
-        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         Set<Integer> set = new HashSet<Integer>();
         int count = 0;
         for (int i = 0; i < nums.length; i++) {

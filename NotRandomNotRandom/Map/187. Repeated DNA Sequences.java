@@ -21,3 +21,5 @@ public class Solution {
         return res;
     }
 }
+
+// 把长度为10的子串都存进map里，然后重复就加到res里 加过的就不用再加了ß
