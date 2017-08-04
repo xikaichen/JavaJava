@@ -2,18 +2,15 @@
 // 存的是rangeSum(0, i)的值的范围[min, max]
 // 2. 怎么建SegmentTreeNode?
 // 正常建法，valArr是sort了之后的prefixSum。按照这个array来建立线段树
-// 3. update方程在干什么?
+// 3. update方程在干什么? 
 // 传入一个值，update方程check这个值属不属于SegmenTreeNode所表示的范围，如果表示这个点的count加一
 // 4. getCount函数？
 // 传入一个范围，统计count在这个范围内的总和.
 // 如果传入的范围包括了node保存的范围，那么node.count整个都是
 // 5. ans += getCount(root, (long) lower + sum, (long) upper + sum)什么意思
-// 因为之前所有的值都是rangeSum(0, j)，我们还需要知道rangeSum(i, j)在不在[lower, upper]里，
-// 那么rangeSum(i, j) = rangeSum(0, j) - rangeSum(0, i)
-// 前一个sum是rangeSum(0, j)根据这个update线段树，
-// 然后sum -= (long) nums[i]之后，sum就是rangeSum(0, i)。那这样就是在看rangeSum(j - 1, j)在不在[lower, upper]里，
-// 但是因为是一个循环之前的统计结果已经在count里了，所以也会得到rangeSum(j - 1, j + 1),...,rangeSum(j - 1, last)在不在[lower, upper]里
-
+// 因为是从后朝前遍历
+// 等于之前的segmenttree里已经存了rangeSum(0, last), rangSum(0, last - 1),....,rangeSum(0, i + 1)的信息了
+// 所以getCount(root, (long) lower + sum, (long) upper + sum) 得到的是rangeSum(i, i + 1),...,ranngeSum(i, last)在不在[low, up]里的数量
 
 
 // segment tree hard
@@ -49,7 +46,7 @@ public class Solution {
         if (val >= node.min && val <= node.max) {
             node.count++;
             updateSegmentTree(node.left, val);
-            updateSegmentTree(node.right, val);
+            updateSegmentT  ree(node.right, val);
         }
     }
     private int getCount(SegmentTreeNode node, long min, long max) {

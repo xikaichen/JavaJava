@@ -34,9 +34,15 @@ public class NumArray {
     }
 }
 
+
+// SegmentTree要有start, end, left, right, val这五个属性，构造函数需要传入start 和 end
+// BuildTree考虑start > end(return null)，start == end(node.val = nums[start]), start < end(递归构造node.left, node.right)
+// update递归查找，考虑传入下标i和root.start, root.end的位置关系，考虑root.start == root.end和!=两种情况
+// 求和考虑root.start == i && root.end == j 直接返回root值 和 其他情况
+
 //线段树
 public class NumArray {
-    public class SegmentTree {
+    public class SegmentTree { 
         int start;
         int end;
         SegmentTree left;
