@@ -12,7 +12,7 @@ public class Solution {
             return null;
         }
         RandomListNode dummy = head;
-        HashMap<RandomListNode, RandomListNode> map = new HashMap<>();
+        Map<RandomListNode, RandomListNode> map = new HashMap<>();
         while (head != null) {
             map.put(head, new RandomListNode(head.label));
             head = head.next;

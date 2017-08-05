@@ -18,7 +18,7 @@ public class Solution {
         //step1: clone value, need traverse the whole graph, because it is a graph need a set to avoid circle
         Queue<UndirectedGraphNode> queue = new LinkedList<UndirectedGraphNode>();
         Set<UndirectedGraphNode> set = new HashSet<UndirectedGraphNode>();
-        HashMap<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap<>();
+        Map<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap<UndirectedGraphNode, UndirectedGraphNode>();
         queue.offer(node);
         set.add(node);
         map.put(node, new UndirectedGraphNode(node.label));
