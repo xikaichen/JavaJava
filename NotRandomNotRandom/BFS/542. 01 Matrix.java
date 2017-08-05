@@ -9,14 +9,17 @@ public class Solution {
             this.y = y;
         }
     }
+
     public int[][] updateMatrix(int[][] matrix) {
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
             return matrix;
         }
+
         int m = matrix.length;
         int n = matrix[0].length;
         int[][] res = new int[m][n];
         boolean[][] visited = new boolean[m][n];
+        
         Queue<Coordinates> queue = new LinkedList<Coordinates>();
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {

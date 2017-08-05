@@ -57,8 +57,8 @@ public class Solution {
         Set<String> end = new HashSet<String>();
         start.add(beginWord);
         end.add(endWord);
-        dict.remove(beginWord);
         dict.remove(endWord);
+
         int minLength = 2;
         while (!start.isEmpty()) {
             if (start.size() > end.size()) { // 从size比较小的那个开始搜，其实无所谓只要交替搜索就行了，比如也可以让minLength % 2 == 0的时候start和end交换
@@ -78,7 +78,7 @@ public class Solution {
                         }
                         if (dict.contains(String.valueOf(chars))) {
                             neighbors.add(String.valueOf(chars));
-                            dict.remove(String.valueOf(chars));
+                            dict.remove(String.valueOf(chars)); // 避免重复添加
                         }
                     }
                     chars[i] = prev; // 记得变回去

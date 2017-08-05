@@ -73,7 +73,7 @@ public class Solution {
             return cache[i][j];
         }
         int max = 1;
-        for(int[] dir: dirs) {
+        for(int[] dir : dirs) {
             int x = i + dir[0], y = j + dir[1];
             if(x < 0 || x >= m || y < 0 || y >= n || matrix[x][y] <= matrix[i][j]) {
                 continue;

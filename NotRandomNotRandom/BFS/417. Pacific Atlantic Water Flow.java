@@ -1,4 +1,5 @@
-// 从水出发 两个洋交汇的地方就是 都可以到达的点
+// 意思是算出 从陆地上能流到太平洋和大西洋的水源坐标
+// 从洋出发 两个洋交汇的地方就是 都可以到达的点
 public class Solution {
     public class Coordinates {
         int x;
@@ -21,7 +22,7 @@ public class Solution {
         boolean[][] aVisited = new boolean[m][n];
         Queue<Coordinates> pQueue = new LinkedList<Coordinates>();
         Queue<Coordinates> aQueue = new LinkedList<Coordinates>();
-        for (int i = 0; i < m; i++) {
+        for (int i = 0; i < m; i++) { // 从四条边缘开始
             pVisited[i][0] = true;
             aVisited[i][n - 1] = true;
             pQueue.offer(new Coordinates(i, 0));
