@@ -12,7 +12,7 @@ public class Solution {
             if (nums[mid] == target) {
                 return true;
             }
-            if (nums[mid] >= nums[left]) {
+            if (nums[mid] >= nums[left]) { // 先确定mid的位置
                 if (target <= nums[mid] && target >= nums[left]) {
                     right = mid;
                 } else {
