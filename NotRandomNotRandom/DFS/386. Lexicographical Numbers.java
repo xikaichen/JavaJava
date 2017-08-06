@@ -52,7 +52,7 @@ public class Solution {
             return;
         } else {
             res.add(cur);
-            for(int i = 0; i < 10; i++) {
+            for (int i = 0; i < 10; i++) {
                 if (10 * cur + i > n) {
                     return;
                 }

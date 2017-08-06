@@ -1,6 +1,6 @@
 public class Solution {
     public int getSum(int a, int b) {
-        if (b == 0) {
+        if (b == 0) { // 没有进位了或者b本来就是0 退出
             return a;
         }
         int sum = a ^ b; // xor也叫不进位加法： 原因 1 ^ 0 = 0 ^ 1 = 1. 1 ^ 1 = 0没有进位

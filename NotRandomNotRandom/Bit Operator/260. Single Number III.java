@@ -11,7 +11,7 @@ public class Solution {
             if ((num & bit) > 0) { //must use (num & bit), otherwise there is compile error
                 num1 ^= num;
             } else {
-                num2 ^= num;
+                num2 ^= num; 
             }
         }
         int[] res = new int[2];

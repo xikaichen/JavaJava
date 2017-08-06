@@ -15,10 +15,14 @@ public class Solution {
         return count;
     }
 }
+
+
 public class Solution {
     public int[] countBits(int num) {
         int[] f = new int[num + 1];
-        for (int i=1; i<=num; i++) f[i] = f[i >> 1] + (i & 1); // even number they have same 1, odd number like 5 have one more 1 than 3.
+        for (int i = 1; i <= num; i++) {
+            f[i] = f[i / 2] + (i & 1); // even number they have same 1, odd number like 5 have one more 1 than 3.
+        }
         return f;
     }
 }
