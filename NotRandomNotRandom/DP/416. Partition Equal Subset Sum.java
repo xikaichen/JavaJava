@@ -16,7 +16,7 @@ public class Solution {
         volumn /= 2;
         // now the question convert to 0/1 knapsack problem
         // pick numbers in nums to see if they can sum up to volumn
-        boolean[][] dp = new boolean[nums.length ][volumn + 1];
+        boolean[][] dp = new boolean[nums.length][volumn + 1];
         for (int i = 0; i < nums.length; i++) {
             dp[i][0] = true; 
         }
@@ -57,7 +57,7 @@ public class Solution {
         dp[0] = true;
 
         for (int i = 1; i < nums.length; i++) {
-            for (int j = volumn; j > 0; j--) {
+            for (int j = volumn; j > 0; j--) { // 只能从后朝前，因为dp[j]要用到dp[j - 1]的信息，而从后朝前更新时，前面还没有更新的格子还保留着上一个时刻的信息
                 if (j >= nums[i - 1]) {
                     dp[j] = dp[j] || dp[j - nums[i - 1]];
                     // i 个数到j = i - 1时刻已经到j 或者i时刻到了j - 第i个数，然后再取第i个数(nums[i - 1])
