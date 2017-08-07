@@ -13,14 +13,14 @@ public class Solution {
                         int nr = r + dirs[d][0];
                         int nc = c + dirs[d][1];
                         if (nr < 0 || nr >= m || nc < 0 || nc >= n) {
-                            res = (res + dp[r][c]) % MOD;
+                            res = (res + dp[r][c]) % MOD; // res根据上一个step的dp来更新
                         } else {
-                            temp[nr][nc] = (temp[nr][nc] + dp[r][c]) % MOD;
+                            temp[nr][nc] = (temp[nr][nc] + dp[r][c]) % MOD; // temp根据上一个step的dpo来更新
                         }
                     }
                 }
             }
-            dp = temp;
+            dp = temp; // 更新完temp后 另dp = temp
         }
         return res % MOD;
     }

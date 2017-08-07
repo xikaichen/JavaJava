@@ -15,3 +15,19 @@ public class Solution {
 // 抢i = 不抢 i - 1 + nums[i]
 // 不抢i = max(不抢i - 1, 抢i - 1)
 
+
+// O(1)空间
+public class Solution {
+    public int rob(int[] nums) {
+        int rob = 0;
+        int notRob = 0;
+        for (int i = 1; i <= nums.length; i++) {
+            int prevNotRob = notRob;
+            notRob = Math.max(rob, notRob);
+            rob = prevNotRob + nums[i - 1];
+        }
+        return Math.max(notRob, rob);
+    }
+}
+
+
