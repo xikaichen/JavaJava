@@ -16,7 +16,7 @@ public class Solution {
         dummy.next = head;
         ListNode prev = dummy;
         ListNode cur = head;
-        while (cur != null){
+        while (cur != null) {
             while (cur.next != null && cur.val == cur.next.val) { // 这一步cur位于重复值的点的最后一个
                 cur = cur.next;
             }

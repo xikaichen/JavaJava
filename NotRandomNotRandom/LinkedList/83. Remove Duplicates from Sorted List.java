@@ -14,7 +14,7 @@ public class Solution {
         ListNode cur = head;
         while (cur != null) {
             if (prev.val == cur.val) {
-                prev.next = cur;
+                prev.next = cur.next;
             } else {
                 prev = prev.next;
             }

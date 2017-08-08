@@ -15,15 +15,15 @@ public class Solution {
         reverse(middlePoint);
         ListNode p1 = head;
         ListNode p2 = middlePoint.next;
-        while(p1 != middlePoint){
-            middlePoint.next=p2.next;
-            p2.next=p1.next;
-            p1.next=p2;
-            p1=p2.next;
-            p2=middlePoint.next;
+        while  (p1 != middlePoint) {
+            middlePoint.next = p2.next;
+            p2.next = p1.next;
+            p1.next = p2;
+            p1 = p2.next;
+            p2 = middlePoint.next;
         }
     }
-    
+     
     private ListNode findMid(ListNode head) {   //standard find middle point
         ListNode fast = head;
         ListNode slow = head;

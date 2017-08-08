@@ -23,7 +23,7 @@ public class Solution {
                 }
             }
         });
-        for (int i = 0; i < lists.length; i++) {
+        for (int i = 0; i < lists.length; i++)  {
             ListNode cur = lists[i];
             while (cur != null) {
                 pq.offer(cur);

@@ -11,8 +11,8 @@
  */
 
 
-// 2k - k = r
-// r = m + s
+// 2k - k = nr
+// nr = m + s,(take n = 1, doesn't affect the result)the distance between the start node of cycle and the first meeting node is m,the distance between the start node of list and the start node of cycle is s
 // so k = m + s
 public class Solution {
     public ListNode detectCycle(ListNode head) {
