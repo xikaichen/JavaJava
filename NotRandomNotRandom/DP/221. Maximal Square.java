@@ -13,6 +13,6 @@ public class Solution {
                 }
             }
         }
-        return result * result;
+        return result * result;  
     }
 }

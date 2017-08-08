@@ -8,7 +8,7 @@
 // If nums[i] < nums[i-1], that means it wiggles down. the element before it must be a up position. so down[i] = up[i-1] + 1; up[i] keeps the same with before.
 // If nums[i] == nums[i-1], that means it will not change anything becasue it didn't wiggle at all. so both down[i] and up[i] keep the same.
 
-In fact, we can reduce the space complexity to O(1), but current way is more easy to understanding.
+// In fact, we can reduce the space complexity to O(1), but current way is more easy to understanding.
 public class Solution {
     public int wiggleMaxLength(int[] nums) {
     	if (nums == null || nums.length == 0) {
@@ -39,8 +39,11 @@ public int wiggleMaxLength(int[] nums) {
     if (nums.length == 0) return 0;
     int up = 1, down = 1;
     for (int i = 1; i < nums.length; i++) {
-        if (nums[i] < nums[i - 1]) down = up + 1;
-        else if (nums[i] > nums[i - 1]) up = down + 1;
+        if (nums[i] < nums[i - 1]) {
+            down = up + 1;
+        } else if (nums[i] > nums[i - 1]) {
+            up = down + 1;
+        }
     }
     return Math.max(up, down);
 }
