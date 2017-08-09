@@ -7,7 +7,7 @@ public class Solution {
         int right = x;
         while (left + 1 < right) {
             int mid = left + (right - left) / 2;
-            if (mid > 46340) { // avoid overflow
+            if (mid > 46340) { // avoid overflow(sqrt(Integer.MAX_VALUE))
                 right = mid;
             } else if (x > mid * mid) {
                 left = mid;

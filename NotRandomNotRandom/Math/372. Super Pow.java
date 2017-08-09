@@ -8,7 +8,7 @@ public class Solution {
     private int DIV = 1337;
     
     List<Integer> findLoop(int a){
-        List<Integer> index = new ArrayList<Integer>(); // a * b * c % DIV = (((a % DIV) * b) % DIV) % DIV, 对于很多数字相乘求模 可以用第一个数取模，用模去乘以接下来的数字
+        List<Integer> index = new LinkedList<Integer>(); // a * b * c % DIV = (((a % DIV) * b) % DIV) % DIV, 对于很多数字相乘求模 可以用第一个数取模，用模去乘以接下来的数字
         boolean[] set = new boolean[DIV]; // the pattern size would be over DIV
         int rem = a % DIV;
         while (!set[rem]) {
@@ -46,3 +46,7 @@ public class Solution {
         return index.get(rem - 1);
     }
 }
+// 步骤
+// 1. 用a mod 1337把a变成比1337小的数字c
+// 2. 求出c ^ b mod 1337的pattern(findLoop函数)
+// 3. 用b mod 1337(modBy函数)确定a ^ b mod 1337在pattern的什么位置

@@ -4,6 +4,7 @@
 // and y such that ax+by=d
 // In addition, the greatest common divisor d is the smallest positive integer that can be written as ax + by
 // every integer of the form ax + by is a multiple of the greatest common divisor d.
+// 这道题等价于求x和y的最大公约数。然后看z能不能整除这个数
 public class Solution {
     public boolean canMeasureWater(int x, int y, int z) {
         //limit brought by the statement that water is finallly in one or both buckets
