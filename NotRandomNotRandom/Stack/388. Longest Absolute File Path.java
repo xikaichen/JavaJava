@@ -5,10 +5,10 @@ public class Solution {
         int maxLen = 0;
         for (String s : input.split("\n")) {
             int lev = s.lastIndexOf("\t") + 1; // number of "\t"
-            while (lev + 1 < stack.size()) {
+            while (lev + 1 < stack.size()) { 
                 stack.pop(); // find parent, pop until the stack.peek() is the parent
             }
-            int len = stack.peek() + s.length() - lev + 1; // remove "/t", add"/"
+            int len = stack.peek() + s.length() - lev + 1; // remove "\t" ("\t" length = 1, not 2), add"/"
             stack.push(len);
             // check if it is file
             if (s.contains(".")) {

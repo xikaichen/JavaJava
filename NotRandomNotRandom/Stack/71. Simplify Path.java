@@ -18,7 +18,7 @@ public class Solution {
         while (!stack.isEmpty()) {
             res = "/" + stack.pop() + res;
         }
-        return res.length() == 0 ? "/" : res;
+        return res.length() == 0 ? "/" : res; // case: /./ or /a/../
     }
 }
 

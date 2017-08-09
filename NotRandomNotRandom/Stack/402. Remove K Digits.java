@@ -1,6 +1,6 @@
 public class Solution {
     public String removeKdigits(String num, int k) {
-        if (k == num.length()) {       
+        if (k == num.length()) {  // test case num = "12", k = 2     
             return "0";
         }
         Stack<Character> stack = new Stack<Character>();
@@ -26,7 +26,7 @@ public class Solution {
         //remember reverse
         sb.reverse();
         //remove all the 0 at the head
-        while (sb.length() > 1 && sb.charAt(0) == '0') {
+        while (sb.length() > 1 && sb.charAt(0) == '0') { // test case 10011, k = 1
             sb.deleteCharAt(0);
         }
         return sb.toString();

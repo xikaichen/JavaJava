@@ -20,7 +20,7 @@ public class Solution {
                 idx++;
             } else if (s.charAt(idx) == ']') {
                 // 碰到 ']' 从countStack pop出来一个数，重复res这么多次得到新的res
-                StringBuilder temp = new StringBuilder (resStack.pop());
+                StringBuilder temp = new StringBuilder(resStack.pop());
                 int repeatTimes = countStack.pop();
                 for (int i = 0; i < repeatTimes; i++) {
                     temp.append(res);
