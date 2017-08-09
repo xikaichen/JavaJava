@@ -1,10 +1,12 @@
+// dict里存的是root，sentence里是successor + root，要做的是把sentence里的word换成root
 public class Solution {
     public class TrieNode {
         TrieNode[] children = new TrieNode[26];
         String word = "";
     }
     
-    public TrieNode buildTree(TrieNode root, List<String> dict) {
+    public TrieNode buildTree(List<String> dict) {
+        TrieNode root = new TrieNode();
         for (String s : dict) {
             TrieNode temp = root;
             for (char c : s.toCharArray()) {
@@ -34,8 +36,7 @@ public class Solution {
         return s;
     }
     public String replaceWords(List<String> dict, String sentence) {
-        TrieNode root = new TrieNode();
-        root = buildTree(root, dict);
+        TrieNode root = buildTree(dict);
         StringBuilder sb = new StringBuilder();
         String[] words = sentence.split(" ");
         for (String str : words) {
