@@ -1,6 +1,7 @@
 public class Solution {
     public void wiggleSort(int[] nums) {
         int median = findKthLargest(nums, (nums.length + 1) / 2);
+        // 找到中位数之后，这是一种插入的方法，可以有很多种方法，但是感觉这样方便，odd从1开始，even如果nums的长度是偶数从倒数第二个开始，要不然就从倒数第一个开始
         int odd = 1;
         int even = nums.length % 2 == 0 ? nums.length - 2 : nums.length - 1;
         int[] tmpArr = new int[nums.length];

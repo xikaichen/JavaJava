@@ -5,7 +5,7 @@ public class Solution {
         } 
         int left = 0;
         int right = nums.length - 1;
-        while (left <= right) {   //mush use <= because you need check if location left = right still satisfied the condition
+        while (left <= right) {   //must use <= because you need check if location left = right still satisfied the condition
             while (left <= right && nums[left] != val) {
                 left++;
             }

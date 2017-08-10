@@ -5,7 +5,7 @@ public class Solution {
     }
     
     private int quickSelect(int[] nums, int start, int end, int k) {
-        if (start == end) {
+        if (start >= end) {
             return nums[start];
         }
         int left = start, right = end;
