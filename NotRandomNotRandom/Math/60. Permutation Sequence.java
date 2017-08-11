@@ -22,7 +22,7 @@ public class Solution {
             used[i] = false;
         }
     }
-}
+} 
 
 // 数学， 数数字，根据k来判断 该在什么位置
 public class Solution {
