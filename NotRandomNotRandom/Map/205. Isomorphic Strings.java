@@ -9,7 +9,7 @@ public class Solution {
             } else {
                 map.put(s.charAt(i), t.charAt(i));
             }
-        }
+        } // test case: add, eggg or add ggg.(that is why we need check map t to s)
         
         Map<Character, Character> map1 = new HashMap<Character, Character>(); // check map t to s 
         for (int i = 0; i < t.length(); i++) {
@@ -36,7 +36,7 @@ public class Solution {
             char a = s.charAt(i);
             char b = t.charAt(i);
             if(map.containsKey(a)){
-                if(map.get(a).equals(b)) {
+                if(map.get(a) == b) {
                     continue;
                 } else {
                     return false;
