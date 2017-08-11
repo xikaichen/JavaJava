@@ -68,7 +68,7 @@ public boolean isValidBST (TreeNode root){
                        return false ;
                    }                   
                    prev = temp ;                       
-                   cur = p.right ;
+                   cur = temp.right ;
                }
            }
            return true ; 

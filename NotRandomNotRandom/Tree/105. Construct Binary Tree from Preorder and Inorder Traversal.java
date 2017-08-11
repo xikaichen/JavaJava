@@ -30,7 +30,7 @@ public class Solution {
         
         TreeNode root = new TreeNode(preorder[preStart]);
         int rootIdx = map.get(root.val);
-        int numsLeft = rootIdx - inStart;
+        int numsLeft = rootIdx - inStart; // root 左子树的个数
         
         root.left = buildTree(preorder, preStart + 1, inorder, inStart, rootIdx - 1, map);
         root.right = buildTree(preorder, preStart + numsLeft + 1, inorder, rootIdx + 1, inEnd, map);

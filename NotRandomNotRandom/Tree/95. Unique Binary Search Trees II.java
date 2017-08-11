@@ -22,7 +22,7 @@ public class Solution {
             List<TreeNode> rightList = genTreeList(idx + 1, end);
             for (TreeNode left : leftList) {
                 for(TreeNode right : rightList) {
-                    TreeNode root = new TreeNode(idx); // 为什么在重复的生成root？
+                    TreeNode root = new TreeNode(idx); 
                     root.left = left;
                     root.right = right;
                     list.add(root);
