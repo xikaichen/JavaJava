@@ -24,7 +24,7 @@ public class Solution {
                 }
             }
         }
-        if (res.size() == 0) {
+        if (res.size() == 0) { // corner case like: "2", or "2 - 1"
             res.add(Integer.parseInt(input));
         }
         return res;

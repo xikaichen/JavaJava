@@ -11,7 +11,7 @@ public class Solution {
             res.add(new LinkedList(temp));
             return;
         }
-        if (k == 0 & n != 0) {
+        if (k < 0 || n < 0) {
             return;
         }
         for (int i = start; i < 10; i++) {

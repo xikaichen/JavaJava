@@ -21,7 +21,7 @@ public class Solution {
             if (set.contains(nums[i])) {
                 continue;
             }
-            set.add(nums[i]); // 注意set在这里只add 没有remove
+            set.add(nums[i]); // 注意set在这里只add 没有remove, 因为set在每一层recursion中都是一个新的
             temp.add(nums[i]);
             backtrack(res, temp, nums, i + 1);
             temp.remove(temp.size() - 1);

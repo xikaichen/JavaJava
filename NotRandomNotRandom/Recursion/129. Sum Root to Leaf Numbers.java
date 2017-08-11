@@ -12,7 +12,7 @@ public class Solution {
         return sumNodes(root, 0);
     }
 
-      private int sumNodes(TreeNode root, int currentSum) {
+    private int sumNodes(TreeNode root, int currentSum) {
         if (root == null) {
             return 0;
         }
@@ -29,7 +29,7 @@ public class Solution {
 
 // preorder traversal, don't know how to not use recursion, using stack instead
 public class Solution {
-    int total;
+    public int total;
     
     public int sumNumbers(TreeNode root) {
         total = 0;
@@ -37,7 +37,7 @@ public class Solution {
         return total;
     }
     
-    void helper(TreeNode root, int sum) {
+    public void helper(TreeNode root, int sum) {
         if (root == null) return;
         
         sum = sum * 10 + root.val;

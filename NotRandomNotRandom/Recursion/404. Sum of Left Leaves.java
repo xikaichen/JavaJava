@@ -15,7 +15,9 @@ public class Solution {
         if (root.left != null && root.left.left == null && root.left.right == null) { // look at the left node, if it satisfied the condition, look at the right node.
             return root.left.val + sumOfLeftLeaves(root.right);
         }
-        return sumOfLeftLeaves(root.left) + sumOfLeftLeaves(root.right); // final result = the result of left + the result of right
+        int left = sumOfLeftLeaves(root.left);
+        int right = sumOfLeftLeaves(root.right);
+        return  left + right; // final result = the result of left + the result of right
 
     }
 }

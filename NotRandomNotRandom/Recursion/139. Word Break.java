@@ -33,9 +33,9 @@ public class Solution {
         boolean [] breakable = new boolean[s.length() + 1];
         breakable[0] = true;
 
-        for(int i = 1; i <= s.length(); i++){
-            for(int j=0; j < i; j++){
-                if(breakable[j] && dict.contains(s.substring(j, i))){
+        for (int i = 1; i <= s.length(); i++) {
+            for (int j = 0; j < i; j++) {
+                if (breakable[j] && dict.contains(s.substring(j, i))) {
                     breakable[i] = true;
                     break;
                 }
