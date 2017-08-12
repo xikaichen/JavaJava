@@ -30,3 +30,5 @@ public class Solution {
         return i;
     }
 }
+// i左边的都是只有一个且sorted的，所以是当前数字n是和nums[i - 1]比较如果不一样就可以让nums[i] = n因为是sorted的所以只需要和最后一个比
+// 如果不是sorted的就不行[1,1,1,2,3,1]
