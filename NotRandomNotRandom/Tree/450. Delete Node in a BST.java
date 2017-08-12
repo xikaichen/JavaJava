@@ -31,7 +31,7 @@ public class Solution {
             root.val = minNode.val;
             root.right = deleteNode(root.right, minNode.val);
         }
-    return root;
+        return root;
     }
     private TreeNode findMin(TreeNode root) {
         while (root.left != null) {

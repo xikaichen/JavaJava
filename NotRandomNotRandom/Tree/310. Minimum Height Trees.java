@@ -22,7 +22,7 @@ public class Solution {
             List<Integer> newLeaves = new LinkedList<Integer>();
             for (int i = 0; i < leaves.size(); i++) {
                 int integer = leaves.get(i);
-                int neighbor = map.get(integer).iterator().next();
+                int neighbor = map.get(integer).iterator().next(); // 或得hashset里的元素
                 map.get(neighbor).remove(integer);
                 if (map.get(neighbor).size() == 1) {
                     newLeaves.add(neighbor);
@@ -33,3 +33,10 @@ public class Solution {
         return leaves;
     }
 }
+
+
+// 遍历hashset中元素的方法
+// Iterator<String> iterator=set.iterator();
+// while(iterator.hasNext()){
+//     System.out.println(iterator.next());
+// }
