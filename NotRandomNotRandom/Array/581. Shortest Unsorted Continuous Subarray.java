@@ -20,3 +20,6 @@ public class Solution {
         return end - start + 1;
     }
 }
+
+// end找最后一个小于当前max的位置
+// start找第一个大于当前min的位置
