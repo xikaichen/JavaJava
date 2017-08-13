@@ -6,11 +6,11 @@ public class Solution {
         int prefix = 0;
         for (int i = 0; i < nums.length; i++) {
             prefix += nums[i];
-            int mode = prefix; // 处理 k = 0的情况 k = 0不能mod k 所以mode就等于prefix
+            int mode = prefix; // 处理 k = 0的情况 k = 0不能mod k 所以mode就等于prefix, prefix mod prefix = 0.
             if (k != 0) {
                 mode = prefix % k;
             }
-            if (map.containsKey(mode)) {
+            if (map.containsKey(mode)) { // (a + b) mod k == (a + b + c + d) mod k, means (c + d) mod k == 0
                 if (i - map.get(mode) > 1) {
                     return true;
                 }

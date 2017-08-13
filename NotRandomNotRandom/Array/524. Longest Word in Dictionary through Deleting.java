@@ -6,12 +6,13 @@ public class Solution {
         Collections.sort(d, (a,b) -> a.length() != b.length() ? -Integer.compare(a.length(), b.length()) :  a.compareTo(b));
         for (String dictWord : d) {
             int i = 0;
-            for (char c : s.toCharArray()) 
+            for (char c : s.toCharArray()) {
                 if (i < dictWord.length() && c == dictWord.charAt(i)) {
                     i++;
                 }
-            if (i == dictWord.length()) {
-                return dictWord;
+                if (i == dictWord.length()) {
+                    return dictWord;
+                }
             }
         }
         return "";

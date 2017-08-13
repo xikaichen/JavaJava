@@ -1,4 +1,4 @@
-// find position, then find next greater element from this position
+// O(n^2) solution, brute force, find position, then find next greater element from this position
 public class Solution {
     public int[] nextGreaterElement(int[] findNums, int[] nums) {
         if (findNums == null) {
@@ -27,5 +27,24 @@ public class Solution {
             }
         }
         return -1;
+    }
+}
+
+
+// O(n) solution
+public class Solution {
+    public int[] nextGreaterElement(int[] findNums, int[] nums) {
+        Stack<Integer> stack = new Stack<Integer>();
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        for (int i = 0; i < nums.length; i++) {
+            while (!stack.isEmpty() && nums[i] > stack.peek()) {
+                map.put(stack.pop(), nums[i]);
+            }
+            stack.push(nums[i]);
+        }
+        for (int i = 0; i < findNums.length; i++) {
+            findNums[i] = map.getOrDefault(findNums[i], -1);
+        }
+        return findNums;
     }
 }
