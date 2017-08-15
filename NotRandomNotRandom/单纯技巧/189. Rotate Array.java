@@ -1,9 +1,10 @@
 public class Solution {
     public void rotate(int[] nums, int k) {
         k = k % nums.length; // consider if k > nums.length, like nums.length = 3, k = 10. then u just need rotate 1 step.
-        reverse(nums, 0, nums.length - k - 1);
-        reverse(nums, nums.length - k, nums.length - 1);
-        reverse(nums, 0, nums.length - 1);
+        reverse(nums, 0, nums.length - 1); // 整个翻转
+        reverse(nums, 0, k - 1); // 翻转前k个
+        reverse(nums, k, nums.length - 1); // 翻转后面
+        
     }
     
     private void reverse(int[] nums, int start, int end) {

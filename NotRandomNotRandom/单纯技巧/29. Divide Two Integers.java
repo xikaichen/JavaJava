@@ -21,7 +21,7 @@ public class Solution {
     	
     	int ans;
     	if (lans > Integer.MAX_VALUE){ //Handle overflow.
-    		ans = (sign == 1)? Integer.MAX_VALUE : Integer.MIN_VALUE;
+    		ans = (sign == 1) ? Integer.MAX_VALUE : Integer.MIN_VALUE;
     	} else {
     		ans = (int) (sign * lans);
     	}
@@ -39,9 +39,9 @@ public class Solution {
     	//  Think this as a binary search.
     	long sum = ldivisor;
     	long multiple = 1;
-    	while ((sum * 2) <= ldividend) {
-    		sum *= 2;
-    		multiple *= 2;
+    	while ((sum + sum) <= ldividend) {
+    		sum += sum;
+    		multiple += multiple;
     	}
     	//Look for additional value for the multiple from the reminder (dividend - sum) recursively.
     	return multiple + ldivide(ldividend - sum, ldivisor);

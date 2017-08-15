@@ -1,3 +1,4 @@
+// 一定要有解才能算出来, 所以还要检查，majority element那道题假设了解一定存在的
 public class Solution {
     public List<Integer> majorityElement(int[] nums) {
         List<Integer> res = new LinkedList<Integer>();
