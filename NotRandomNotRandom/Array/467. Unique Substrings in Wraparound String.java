@@ -1,3 +1,4 @@
+// 题目的意思是有一个无限循环的字符串s: abcd....xyzabc..., 给一个字符p，问p的substring有多少是在s里的
 public class Solution {
     public int findSubstringInWraproundString(String p) {
         // count[i] is the maximum unique substring end with ith letter.
@@ -28,8 +29,17 @@ public class Solution {
     }
 }
 
+z
+za a
+zab ab b
+zabc abc bc c
+x
+xy y
+xyz yz z
+xyza yza za a
+
 
 // i.e:  z a b c x y z a
 //       1 2 3 4 1 2 3 4
-// count:a-4, b-3, c-4, x-1, y-2, z-3
+// count:a-4, b-3, c-4, x-1, y-2, z-3 取最大的数字，例如a取4，因为这样已经把所有以a结尾的可能都包括了
 // sum = 17

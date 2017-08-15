@@ -15,7 +15,6 @@ public class Solution {
         for (int i = 0; i < s.length() / factor; i++) {
             sb.append(s.substring(0, factor));
         }
-        System.out.println(sb);
         return sb.toString().equals(s);
     }
 }
