@@ -1,8 +1,8 @@
-// Find the largest index k such that nums[k] < nums[k + 1]. If no such index exists, the permutation is sorted in descending order, just reverse it to ascending order and we are done. For example, the next permutation of [3, 2, 1] is [1, 2, 3].
-// Find the largest index l greater than k such that nums[k] < nums[l].
-// Swap the value of nums[k] with that of nums[l].
-// Reverse the sequence from nums[k + 1] up to and including the final element nums[nums.size() - 1].
-
+// 算法
+// step1: 从右开始找，找到第一个小于之前一个的数字 534976 找到4，
+// step2: 再从右开始找，找比4大的最小的那个数字，因为从右向左是递增的，所以找到的第一个比4大的数字就是了，找到6
+// step3: 交换4 和 6的位置，变成 536974
+// step4: 对974进行排序（因为之前的性质，不需要排序只需要reverse即可），变成536479, 得到结果
 public class Solution {
     public void nextPermutation(int[] nums) {
         int k = -1;

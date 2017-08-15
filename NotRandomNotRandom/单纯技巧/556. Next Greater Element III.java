@@ -2,7 +2,7 @@
 // step1: 从右开始找，找到第一个小于之前一个的数字 534976 找到4，
 // step2: 再从右开始找，找比4大的最小的那个数字，因为从右向左是递增的，所以找到的第一个比4大的数字就是了，找到6
 // step3: 交换4 和 6的位置，变成 536974
-// step4: 对974进行排序，变成536479, 得到结果
+// step4: 对974进行排序（因为之前的性质，不需要排序只需要reverse即可），变成536479, 得到结果
 public class Solution {
     public int nextGreaterElement(int n) {
         String num = String.valueOf(n);

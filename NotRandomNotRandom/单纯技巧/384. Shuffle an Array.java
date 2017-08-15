@@ -1,3 +1,4 @@
+//算法就是从数组的第二个数字开始到最后，用random.nextInt()生成一个从头到这个数字的随机index 然后交换
 public class Solution {
     private int[] nums;
     private Random random;
