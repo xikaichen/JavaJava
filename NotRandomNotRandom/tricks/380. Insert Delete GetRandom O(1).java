@@ -1,3 +1,5 @@
+// 如果只要insert和remove的话 直接用map就行了，但是map没有index没法getRandom，所以需要list
+// 但是insert到list，只有加到最后一个才是O(1)的时间
 public class RandomizedSet {
     private List<Integer> arr;
     private Map<Integer, Integer> map;

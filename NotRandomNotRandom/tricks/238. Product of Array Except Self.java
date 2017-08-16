@@ -14,3 +14,11 @@ public class Solution {
         return result;
     }
 }
+
+
+算法
+// nums = [2, 3, 4, 5]
+// tmp1 = [1, 2, 6, 24],所以tmp1[i]存的是nums[i]前面要乘的数字
+// 然后从后面循环算出nums[i]后面要存的数字，应该从1开始
+// tmp2 = [60, 20, 5, 1]
+// tmp1[i] * tmp2[i] = res[i]
