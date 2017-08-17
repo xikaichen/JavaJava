@@ -11,7 +11,7 @@ public class Solution {
     
         //2. Remove Spaces
         while(str.charAt(index) == ' ' && index < str.length()) {
-            index ++;
+            index++;
         }
     
         //3. Handle signs
@@ -21,12 +21,12 @@ public class Solution {
         }
         
         //4. Convert number and avoid overflow
-        while(index < str.length()){
+        while (index < str.length()) {
             int digit = str.charAt(index) - '0';
-            if(digit < 0 || digit > 9) break;
+            if (digit < 0 || digit > 9) break;
     
             //check if total will be overflow after 10 times and add digit
-            if(Integer.MAX_VALUE / 10 < total 
+            if (Integer.MAX_VALUE / 10 < total 
                 || Integer.MAX_VALUE / 10 == total && Integer.MAX_VALUE % 10 < digit) {
                     return sign == 1 ? Integer.MAX_VALUE : Integer.MIN_VALUE;
                 }

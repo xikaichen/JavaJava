@@ -1,3 +1,8 @@
+// 算法： 1.正负
+// 2. 整数部分
+// 3. 小数部分 * 10，继续按照整数部分的方法，同时使用hashmap记录模后余数是不是出现过了
+
+
 public class Solution {
     public String fractionToDecimal(int numerator, int denominator) {
         if (numerator == 0) {
