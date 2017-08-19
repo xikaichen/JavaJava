@@ -40,7 +40,6 @@ public class Solution {
         }
         int left = start, right = end;
         int mid = nums[left + (right - left) / 2];
-        while (left <= right) {
             while (left <= right && nums[left] > mid) {
                 left++;
             }
