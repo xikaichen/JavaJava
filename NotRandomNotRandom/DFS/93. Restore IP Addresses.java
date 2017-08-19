@@ -16,7 +16,7 @@ public class Solution {
         }
         for (int i = 1; i < 4; i++) {
             if (start + i > s.length()) {
-                continue;
+                break;
             }
             String tokens = s.substring(start, start + i);
             if (tokens.length() > 1 && tokens.charAt(0) == '0' || Integer.parseInt(tokens) > 255) {
