@@ -26,13 +26,15 @@ public class Solution {
     // 如果余数不为0，用较小数除上一步计算出的余数，直到余数为0，则这两个数的最大公约数为上一步的余数。
     // 下面这样写可以保证a > b 因为如果一开始b比较大 b = a % b，b就会等于a，a就会等于b
     public int GCD(int a, int b) {
-        while (b != 0 ) {
+        while (b != 0) {
             int temp = b;
             b = a % b;
             a = temp;
         }
         return a;
     }
+    //(7, 5) => (5, 2) => (2, 1) => (1, 0) => 1
+    //(18, 12) => (12, 6) => (6, 0) => 6
 }
 
 
