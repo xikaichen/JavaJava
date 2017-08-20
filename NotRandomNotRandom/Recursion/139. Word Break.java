@@ -25,7 +25,7 @@ public class Solution {
     }
 }
 
-//solution 2:
+//solution 2(dp):
 // no recursion solution, use a boolean[] breakable to store the states
 
 public class Solution {

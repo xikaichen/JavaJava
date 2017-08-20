@@ -24,6 +24,18 @@ class Solution {
     }
 }
 
+//最简单的写法 超时
+class Solution {
+    public int countNodes(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        int left = countNodes(root.left);
+        int right = countNodes(root.right);
+        return 1 + left + right;
+    }
+}
+
 // iterative
 class Solution {
     int height(TreeNode root) {
