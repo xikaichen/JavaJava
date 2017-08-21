@@ -29,14 +29,14 @@ public class Solution {
     }
 }
 
-z
-za a
-zab ab b
-zabc abc bc c
-x
-xy y
-xyz yz z
-xyza yza za a
+// z
+// za a
+// zab ab b
+// zabc abc bc c
+// x
+// xy y
+// xyz yz z
+// xyza yza za a
 
 
 // i.e:  z a b c x y z a

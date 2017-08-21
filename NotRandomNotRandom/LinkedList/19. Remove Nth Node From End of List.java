@@ -7,7 +7,7 @@
  * }
  */
 
-
+// 要对head进行操作的一般都要dummy node 比如说删除head，翻转list涉及了head，要返回head（可以返回dummy.next）
 //can never delete head if not use dummy
 public class Solution {
     public ListNode removeNthFromEnd(ListNode head, int n) {
