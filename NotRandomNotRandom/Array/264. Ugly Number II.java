@@ -1,3 +1,4 @@
+// factor只用于临时存结果，结果是由因子2，3，5乘以res得到的
 public class Solution {
     public int nthUglyNumber(int n) {
         int[] res = new int[n];

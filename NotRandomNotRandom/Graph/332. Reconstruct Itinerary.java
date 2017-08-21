@@ -22,6 +22,6 @@ public class Solution {
             } // 找到一条路，直到不能再走为止或者成环
             route.addFirst(stack.pop()); // from tail to head，pop出这个点, 再从他之前一个点开始找路     
         }
-        return route;
+        return route; // 不需要回到JFK的，所以不是euler回路，不过加一条边就是了 所以算法一样
     }   
 }
