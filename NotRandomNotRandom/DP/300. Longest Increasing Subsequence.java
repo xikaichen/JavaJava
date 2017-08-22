@@ -24,6 +24,23 @@ public class Solution {
 }
 
 // O(nlogn)的算法
+public class Solution {
+    public int lengthOfLIS(int[] nums) {
+        int[] dp = new int[nums.length];
+        int len = 0;
+        for (int num : nums) {
+            int i = Arrays.binarySearch(dp, 0, len, num);
+            if (i < 0) {
+                i = -(i + 1);
+            }
+            dp[i] = num;
+            if (i == len) {
+                len++;
+            }
+        }
+        return len;
+    }
+}
 // dp存数字，用二分搜索
 // 例如
 // 0 8 4 12 2
