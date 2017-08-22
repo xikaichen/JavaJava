@@ -6,7 +6,7 @@ public class RandomizedSet {
     private Random rand;
     /** Initialize your data structure here. */
     public RandomizedSet() {
-        arr = new LinkedList<Integer>();
+        arr = new ArrayList<Integer>();
         map = new HashMap<Integer, Integer>();
         rand = new Random();
     }
