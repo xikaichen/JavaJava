@@ -9,7 +9,7 @@ public class Solution {
         int[] bitCount = new int[32];
         for (int i = 0; i < nums.length; i++) {
             for (int j = 0; j < 32; j++) {
-                if ((nums[i] & (1 << j)) != 0) { //用 != 0因为1 << 31是负数 用 > 0会出错
+                if ((nums[i] & (1 << j)) != 0) { //用 != 0因为1 << 31是负数 用 > 0 或 = 1会出错
                     bitCount[j] = (bitCount[j] + 1) % 3;
                 }
             }
