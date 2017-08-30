@@ -11,7 +11,7 @@ public class Solution {
         int i = 0;
         while (i < nums.length) {
             Long floor = set.floor((long) nums[i]);
-            Long ceiling = set.ceiling((long) nums[i]);
+            Long ceiling = set.ceiling((long) nums[i]); // 改成nums[i] - t <= floor会报错，interget overflow -2147483648
             if ((floor != null && nums[i] - floor <= t ) || // 检查set和[nums[i] - t, nums[i] + t]是否有交集，防止overflow
                     (ceiling != null && ceiling - nums[i] <= t)) {
                 return true;

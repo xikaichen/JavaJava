@@ -32,7 +32,7 @@ public class WordDictionary {
     
     private boolean match(TrieNode root, String word, int idx) {
         if (idx == word.length()) { 
-            return !root.item.equals("");
+            return !root.item.equals(""); // 因为word可能有wildcard，所以不用equals(word)
         }
         if (word.charAt(idx) == '.') {
             for (int i = 0; i < 26; i++) {

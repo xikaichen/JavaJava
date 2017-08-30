@@ -47,7 +47,7 @@ public class Solution {
 public class Solution {
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
         Set<String> dict = new HashSet<String>();
-        for (int i = 0; i < wordList.size(); i++) {
+        for (int i = 0; i < wordList.size(); i++) { // 把wordList存进set，可以让remove操作更快，反则超时
             dict.add(wordList.get(i));
         }
         if (!dict.contains(endWord)) { // 题目要求 endWord要在wordList里
