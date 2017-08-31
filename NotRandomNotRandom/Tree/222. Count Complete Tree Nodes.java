@@ -13,14 +13,19 @@
 //如果右子树高度小于h - 1，只有可能是h - 2，而且右子树一定是完整的, 所以加上2 ^ (h - 1)跳转到左子树，h--
 //recursion
 class Solution {
-    int height(TreeNode root) {
-        return root == null ? -1 : 1 + height(root.left);
+    private int height(TreeNode root) {
+        return root == null ? 0 : 1 + height(root.left);
     }
     public int countNodes(TreeNode root) {
         int h = height(root);
-        return h < 0 ? 0 :
-               height(root.right) == h-1 ? (1 << h) + countNodes(root.right)
-                                         : (1 << h-1) + countNodes(root.left);
+        if (h == 0) {
+            return 0;
+        }
+        if (height(root.right) == h - 1) {
+            return (1 << (h - 1)) + countNodes(root.right);
+        } else {
+            return (1 << (h - 2)) + countNodes(root.left);
+        }
     }
 }
 
