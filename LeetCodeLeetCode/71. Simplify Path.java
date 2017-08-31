@@ -1,3 +1,9 @@
+/*
+
+"///abc" split("/")之后会变成["", "", "", "abc"]
+
+
+*/
 public class Solution {
     public String simplifyPath(String path) {
         String[] strs = path.split("/");
