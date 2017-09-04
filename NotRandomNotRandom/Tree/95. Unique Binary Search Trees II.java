@@ -7,28 +7,33 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
-public class Solution {
+class Solution {
     public List<TreeNode> generateTrees(int n) {
-        return genTreeList(1, n);
+        if (n == 0) {
+            return new LinkedList();
+        }
+        return generate(1, n);
     }
     
-    private List<TreeNode> genTreeList (int start, int end) {
-        List<TreeNode> list = new ArrayList<TreeNode>(); 
+    private List<TreeNode> generate(int start, int end) {
+        List<TreeNode> res = new LinkedList<>();
         if (start > end) {
-            list.add(null);
+            res.add(null);
         }
-        for(int idx = start; idx <= end; idx++) {
-            List<TreeNode> leftList = genTreeList(start, idx - 1);
-            List<TreeNode> rightList = genTreeList(idx + 1, end);
-            for (TreeNode left : leftList) {
-                for(TreeNode right : rightList) {
-                    TreeNode root = new TreeNode(idx); 
-                    root.left = left;
-                    root.right = right;
-                    list.add(root);
+        
+        for (int i = start; i <= end; i++) {
+            
+            List<TreeNode> left = generate(start, i - 1);
+            List<TreeNode> right = generate(i + 1, end);
+            for (TreeNode l : left) {
+                for (TreeNode r : right) {
+                    TreeNode root = new TreeNode(i);
+                    root.left = l;
+                    root.right = r;
+                    res.add(root);
                 }
             }
         }
-        return list;
+        return res;
     }
 }

@@ -3,7 +3,7 @@ public class Solution {
         int median = findKthLargest(nums, (nums.length + 1) / 2);
         // 找到中位数之后，这是一种插入的方法，可以有很多种方法，但是感觉这样方便，odd从1开始，even如果nums的长度是偶数从倒数第二个开始，要不然就从倒数第一个开始
         int odd = 1;
-        int even = nums.length % 2 == 0 ? nums.length - 2 : nums.length - 1;
+        int even = nums.length % 2 == 0 ? nums.length - 2 : nums.length - 1; // 很自然地想法因为如果nums.length是偶数的话，odd = 1，3，5，..., nums.length - 1，那么even就应该从nums.length - 2开始，否则从nums.length - 1开始
         int[] tmpArr = new int[nums.length];
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] > median) {
@@ -39,7 +39,8 @@ public class Solution {
             return nums[start];
         }
         int left = start, right = end;
-        int mid = nums[left + (right - left) / 2];
+        int mid = nums[left + (right - left) / 2]; // mid一定要是数，而不能是下标 因为nums在quickselect的过程中一直会变
+        while (left <= right) {
             while (left <= right && nums[left] > mid) {
                 left++;
             }
