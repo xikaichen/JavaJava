@@ -60,7 +60,7 @@ public class Solution {
 
           while(left <= right)
           {  // Increment left pointer until left >= pivot
-             while (left <= right && nums[left] < mid)
+             while (left <= right && nums[left] < mid) // 不能用=因为，left可能移动到了end, while循环终止，又重新sort start 到 end 无尽循环
                 left++;
 
              // Increment right pointer until right <= pivot
@@ -77,6 +77,8 @@ public class Solution {
           }
           quickSort(nums, start, right);
           quickSort(nums, left, end);
+          // 不能用quickSort(nums, start, left);
+          //quickSort(nums, right, end); 无法handle [0, 0]这种case，因为left移动到了end的位置，循环永远不会停止
         }
     
     private void swap(int[] nums, int i, int j) {

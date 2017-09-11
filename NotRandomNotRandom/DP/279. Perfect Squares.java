@@ -18,6 +18,19 @@ public class Solution {
     }
 }
 
+// concise solution~
+class Solution {
+    public int numSquares(int n) {
+        int[] dp = new int[n + 1];
+        for (int i = 1; i <= n; i++) {
+            dp[i] = Integer.MAX_VALUE; // yeah!
+            for (int j = 1; j * j <= i; j++) {
+                dp[i] = Math.min(dp[i], dp[i - j * j] + 1);
+            }
+        }
+        return dp[n];
+    }
+}
 
 // 颠倒两个for循环是可以的， 一般的背包问题是先遍历物品，但是对无限次的背包问题两种都可以
 public class Solution {

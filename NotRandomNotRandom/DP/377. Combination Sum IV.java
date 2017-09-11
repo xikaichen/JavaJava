@@ -1,25 +1,21 @@
 //seems backtrack can solve this problem, but actually it can't because it will stackoverflow. 
 // the question allows element appear infinite times
-public class Solution {
+class Solution {
     public int combinationSum4(int[] nums, int target) {
-        Arrays.sort(nums); // remember sort. 
-        int[] res = new int[target + 1];
-        for (int i = 1; i < res.length; i++) {
+        if (nums.length == 0) {
+            return 0;
+        }
+        int[] dp = new int[target + 1];
+        dp[0] = 1;
+        for (int i = 1; i <= target; i++) {
             for (int j = 0; j < nums.length; j++) {
-                if (nums[j] > i) { // is nums[j] > i, then nums[j] can't be a possible factor of i so just break.
-                    break;
-                }
-                if (nums[j] == i) {
-                    res[i] += 1;
-                } else {
-                    res[i] += res[i - nums[j]];
-                    // 前j + 1个数到i = 前j个数到i 或者 前j个数到i - nums[j]再取第j + 1个数
+                if (i >= nums[j]) {
+                    dp[i] += dp[i - nums[j]];
                 }
             }
         }
-        return res[target];
+        return dp[target];
     }
-
 }
 
 // 画dp矩阵，会发现无限背包问题和前一个时刻没有一点关系（res[i] += res[i - nums[j]]）所以只需要一维数组就可以了

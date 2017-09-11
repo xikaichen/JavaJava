@@ -34,3 +34,23 @@ public class Solution {
         return dp[n];
     }
 }
+
+
+//O(n ^ 2) space
+class Solution {
+    public int numTrees(int n) {
+        int[][] dp = new int[n + 1][n + 1];
+        for (int i = 1; i <= n; i++) {
+            dp[i][i] = 1;
+        } // 不知道为什么要初始化1因为下面已经说了k - 1 <= i 和 k + 1 >= j 取1了
+        for (int step = 1; step < n; step++) {
+            for (int i = 1; i + step <= n; i++) {
+                int j = i + step;
+                for (int k = i; k <= j; k++) {
+                    dp[i][j] += (k - 1 <= i ? 1 : dp[i][k - 1]) * (k + 1 >= j ? 1 : dp[k + 1][j]);
+                }
+            }
+        }
+        return dp[1][n];
+    }
+}
